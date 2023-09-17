@@ -1,0 +1,47 @@
+/* Style the Gallery section */
+.gallery {
+  background-image: url(../images/main.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 20px;
+  color: #fff; /* Text color for better readability */
+}
+
+.gallery h1{
+  color: #F7DBA7;
+}
+.gallery p{
+  margin: 30px ;
+  padding-top: 20px;
+  margin: 0 auto;
+  width: 50%;
+  color: #F7DBA7;
+
+}
+.gallery p span{
+  color: #D81E5B;
+}
+
+.gallery-container {
+  padding-top: 20px;
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+.gallery-row {
+  display: flex;
+  min-height: 300px;
+  max-height: 500px;
+}
+.gallery-img {
+  position: relative;
+  flex-grow: 1;
+  max-width: 33.3%;
+}
+.gallery-img img {
+  height: 75%;
+}
+.gallery-img img:hover {
+ color: #F7DBA7;
+}
