@@ -10,7 +10,7 @@ setupViewEngine(app)
 
 
 app.use(cookieParser())
-app.use(express.static('assets'))
+app.use(express.static('static'))
 app.use(express.urlencoded({extended: false}))
 app.use(authMiddleware.authentication)
 app.use(router)

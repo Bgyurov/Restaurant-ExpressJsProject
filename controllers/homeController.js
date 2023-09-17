@@ -1,6 +1,18 @@
 exports.getHomePage =  (req,res)=>{
     
-    res.render('home', {title: 'Home'})
+    res.render('home')
+}
+exports.getAboutPage =  (req,res)=>{
+    
+    res.render('about')
+}
+exports.getGallaryPage =  (req,res)=>{
+    
+    res.render('gallary')
+}
+exports.getMenuPage =  (req,res)=>{
+    
+    res.render('menu')
 }
 exports.getErrorPage =  (req,res)=>{
     

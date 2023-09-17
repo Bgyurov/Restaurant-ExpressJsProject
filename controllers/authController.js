@@ -2,6 +2,9 @@ const router = require('express').Router()
 
 const authService = require('../service/authService')
 
+router.get('/contactus', (req,res)=>{
+    res.render('auth/contact')
+})
 
 router.get('/login', (req,res)=>{
     res.render('auth/login')

@@ -1,6 +1,6 @@
 const authService = require('../service/authService')
-const //ModelName// = require('../models/------')
-const //ServiceName// = require('../service/--------')
+const Meal = require('../models/Meal')
+const MealService = require('../service/MealService')
 exports.getCreatePage =  (req,res)=>{
     
     res.render('crud/create')
@@ -27,36 +27,36 @@ exports.postCreatePage = async (req,res)=>{
 //details
 exports.getDetailsPage = async (req,res)=>{
    
-    const bookReview = await Book.findById(req.params.bookId).lean()
+    // const bookReview = await Book.findById(req.params.bookId).lean()
     
-    let isOwner = false
-    let isWished = false
-    if(req.isAuthenticated){
-        const bookReviewOwner = bookReview.owner
-        const existingUser = await authService.getUserbyUsername(req.user.username)
+    // let isOwner = false
+    // let isWished = false
+    // if(req.isAuthenticated){
+    //     const bookReviewOwner = bookReview.owner
+    //     const existingUser = await authService.getUserbyUsername(req.user.username)
       
-        const userId = existingUser._id
-        const wishList = bookReview.wishingList
+    //     const userId = existingUser._id
+    //     const wishList = bookReview.wishingList
         
 
-        if(String(userId) == String(bookReviewOwner)){
+    //     if(String(userId) == String(bookReviewOwner)){
         
-            isOwner = true
-        }
-        // additional functional 
-        //  const wished = wishList.find(item => item.equals(userId))
-        // if(wished){
-        //     isWished = true
-        // }
+    //         isOwner = true
+    //     }
+    //     // additional functional 
+    //     //  const wished = wishList.find(item => item.equals(userId))
+    //     // if(wished){
+    //     //     isWished = true
+    //     // }
 
-    }
+    // }
 
-    if(!bookReview){
-      return res.redirect('/404')
-    }
+    // if(!bookReview){
+    //   return res.redirect('/404')
+    // }
     
 
-    res.render('details', { bookReview,isOwner,isWished})
+    res.render('crud/details')
 
 }
 // addition func for add functionality
@@ -71,9 +71,9 @@ exports.getDetailsPage = async (req,res)=>{
 // }
 
 exports.getEditPage = async(req,res)=>{
-    const bookId = req.params.bookId
-    const bookReview = await BookService.getOne(bookId).lean()
-    res.render('crud/edit',{bookReview})
+    // const bookId = req.params.bookId
+    // const bookReview = await BookService.getOne(bookId).lean()
+    res.render('crud/edit')
 }
 exports.postEditPage = async(req,res)=>{
 const bookId = req.params.bookId
