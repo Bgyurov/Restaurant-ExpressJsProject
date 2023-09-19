@@ -16,6 +16,7 @@ exports.getGallaryPage =  (req,res)=>{
 }
 exports.getMenuPage = async (req,res)=>{
     let meals = await Meal.find().lean()
+    meals = meals.slice(0,5)
     res.render('menu',{meals})
 }
 exports.getErrorPage =  (req,res)=>{

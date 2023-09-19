@@ -26,6 +26,10 @@ const MealShema = new mongoose.Schema({
         type:String,
         required: true
     },
+    orderList : [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Users'
+    }],
     owner : {
         type: mongoose.Types.ObjectId,
         ref: 'Users'

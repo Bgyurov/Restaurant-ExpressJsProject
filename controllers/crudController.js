@@ -27,48 +27,48 @@ exports.postCreatePage = async (req,res)=>{
 //details
 exports.getDetailsPage = async (req,res)=>{
    
-    // const bookReview = await Book.findById(req.params.bookId).lean()
+    const mealReview = await Meal.findById(req.params.mealId).lean()
     
-    // let isOwner = false
-    // let isWished = false
-    // if(req.isAuthenticated){
-    //     const bookReviewOwner = bookReview.owner
-    //     const existingUser = await authService.getUserbyUsername(req.user.username)
+    let isOwner = false
+    let isOrdered = false
+    if(req.isAuthenticated){
+        const mealReviewOwner = mealReview.owner
+        const existingUser = await authService.getUserbyUsername(req.user.username)
       
-    //     const userId = existingUser._id
-    //     const wishList = bookReview.wishingList
+        const userId = existingUser._id
+        const orderList = mealReview.orderList
+      
+
+        if(String(userId) == String(mealReviewOwner)){
         
+            isOwner = true
+        }
+      
+         const ordered = orderList.find(item => item.equals(userId))
+        if(ordered){
+            isOrdered = true
+        }
 
-    //     if(String(userId) == String(bookReviewOwner)){
-        
-    //         isOwner = true
-    //     }
-    //     // additional functional 
-    //     //  const wished = wishList.find(item => item.equals(userId))
-    //     // if(wished){
-    //     //     isWished = true
-    //     // }
+    }
 
-    // }
-
-    // if(!bookReview){
-    //   return res.redirect('/404')
-    // }
+    if(!mealReview){
+      return res.redirect('/404')
+    }
     
-
-    res.render('crud/details')
+    console.log(isOwner)
+    res.render('crud/details',{isOwner,mealReview,isOrdered})
 
 }
-// addition func for add functionality
-// exports.getWish = async(req,res)=>{
-//     const existingUser = await authService.getUserbyUsername(req.user.username)
-//     const userId = existingUser._id
-//     const bookId = req.params.bookId
-//     await BookService.wishes(userId,bookId)
-//     console.log('inside');
 
-//     res.redirect(`/details/${req.params.bookId}`);
-// }
+exports.getOrder = async(req,res)=>{
+    const existingUser = await authService.getUserbyUsername(req.user.username)
+    const userId = existingUser._id
+    const mealId = req.params.mealId
+    await MealService.orders(userId,mealId)
+    console.log('inside');
+
+    res.redirect(`/details/${req.params.mealId}`);
+}
 
 exports.getEditPage = async(req,res)=>{
     // const bookId = req.params.bookId

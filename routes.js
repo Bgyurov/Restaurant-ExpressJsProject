@@ -17,7 +17,8 @@ router.get('/createmeal',crudController.getCreatePage)
 router.post('/createmeal',crudController.postCreatePage)
 
 router.get('/edit',crudController.getEditPage)
-router.get('/details',crudController.getDetailsPage)
+router.get('/details/:mealId',crudController.getDetailsPage)
+router.get('/order/:mealId',crudController.getOrder)
 
 
 router.get('/menu',homeController.getMenuPage)

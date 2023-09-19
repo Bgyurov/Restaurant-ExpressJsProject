@@ -9,5 +9,32 @@ exports.update = (thingId,data) => Meal.findByIdAndUpdate(thingId,data, {runVali
 
 exports.delete = (thingId) => Meal.findByIdAndDelete(thingId)
 
+exports.orders = async (userId, mealId) => {
+
+    const meal = await Meal.findById(mealId);
+
+    meal.orderList.push(userId)
+
+    return meal.save();
+}
+
+
+exports.getOrders = async (userId) => {
+    const allMeals = await Meal.find({}).lean();
+    const meals = [];
+
+    function findUserId(meal) {
+
+        if (meal.orderList?.some((id) => id == userId)){
+            meals.push(meal);
+        }
+
+    }
+
+    allMeals.forEach(findUserId);
+
+    return meals
+}
+
 
     
