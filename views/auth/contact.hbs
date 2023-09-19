@@ -3,16 +3,17 @@
     <main id="contact">
         <!-- In case of error, you should display div with class "errorContainer" -->
         <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
-
-        <!-- <div>
+        {{#if error}}
+         <div>
             <div class="errorContainer">
-                <p>Error</p>
+                <p>{{error}}</p>
             </div>
-        </div> -->
-
+        </div> 
+        {{/if}}
+        {{#if isAuthenticated}}
       <div class="contact-box">
             <h1>Leave a Review</h1>
-            <form action="#" method="POST">
+            <form  method="POST">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Name..." required>
                 
@@ -31,6 +32,7 @@
             </form>
             <p>Your reviews are very important to us, we appreciate it</p>
         </div> 
+        {{/if}}
       
         <br>
 

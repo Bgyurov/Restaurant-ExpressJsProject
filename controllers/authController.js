@@ -6,6 +6,10 @@ router.get('/contactus', (req,res)=>{
     res.render('auth/contact')
 })
 
+router.post('/contactus', (req,res)=>{
+    const {name,rating,review} = req.body
+})
+
 router.get('/login', (req,res)=>{
     res.render('auth/login')
 })
