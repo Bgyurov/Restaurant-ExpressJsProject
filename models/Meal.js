@@ -25,7 +25,11 @@ const MealShema = new mongoose.Schema({
     description:{
         type:String,
         required: true
-    }
+    },
+    owner : {
+        type: mongoose.Types.ObjectId,
+        ref: 'Users'
+    },
 })
 
 const Meal = mongoose.model('Meal',MealShema)

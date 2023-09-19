@@ -1,13 +1,26 @@
 const router = require('express').Router()
-
 const authService = require('../service/authService')
+const Review = require('../models/Review')
 
 router.get('/contactus', (req,res)=>{
     res.render('auth/contact')
 })
 
-router.post('/contactus', (req,res)=>{
-    const {name,rating,review} = req.body
+router.post('/contactus', async (req,res)=>{
+    const user = await authService.getUserbyUsername(req.user.username)
+    const userId = user._id
+    const {name,rating,comment} = req.body
+    try{
+        let review = new Review({name,rating,comment, owner: userId})
+        await review.save()
+    }catch(error){
+        const errors = Object.keys(error.errors).map(key => error.errors[key].message)
+        
+        return res.render('auth/contact',{error: errors[0]})
+    }
+    
+    res.redirect('/')
+   
 })
 
 router.get('/login', (req,res)=>{

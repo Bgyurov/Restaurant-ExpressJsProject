@@ -1,5 +1,6 @@
 
     <main id="home">
+       
           
         <div class="content">
             <h1>Food<br><span> Hut</span></h1>
@@ -10,21 +11,15 @@
         <br></br>
     <div class="reviews">
         <h2>Customer Reviews</h2>
-        <div class="review">
-          
-            <h3>John Doe</h3>
-            <p>"This product is amazing! I love it."</p>
-        </div>
-        <div class="review">
-           
-            <h3>Jane Smith</h3>
-            <p>"I can't believe how great this product is. Highly recommended!"</p>
-        </div>
-        <div class="review">
-           
-            <h3>Bob Johnson</h3>
-            <p>"I've been using this product for a month now, and it's fantastic."</p>
-        </div>
+        {{#if comments}}
+        {{#each comments}}
+        {{>review}}
+        {{/each}}
+        {{else}}
+        <div class="no-offer">
+                <p>No reviews available at the moment.</p>
+            </div> 
+        {{/if}}
     </div>
             </div>
           
