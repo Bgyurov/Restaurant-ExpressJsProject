@@ -31,9 +31,9 @@ router.get('/register', (req,res)=>{
 })
 
 router.post('/register', async (req, res,next)=>{
-    const {username,email , password , repeatpassword} = req.body
+    const {username,email , password , repeatPassword} = req.body
 
-    if(password !== repeatpassword){
+    if(password !== repeatPassword){
         //throw new errror
         
         return res.render('auth/register',{error: 'Password Missmatch'})
@@ -56,13 +56,15 @@ router.post('/register', async (req, res,next)=>{
 
     try {
         const user = await authService.register(username , email , password)
+        const token = await authService.login(email,password)
+        res.cookie('mycookie', token, {httpOnly: true})
     } catch (error) {
         const errors = Object.keys(error.errors).map(key => error.errors[key].message)
 
         return res.render('auth/register',{error: errors[0]})
     }
 
-    res.redirect('/login')
+    res.redirect('/')
 })
 
 router.get('/logout',(req,res)=>{
