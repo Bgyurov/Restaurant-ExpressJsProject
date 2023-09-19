@@ -1,6 +1,24 @@
 const authService = require('../service/authService')
 const Meal = require('../models/Meal')
 const MealService = require('../service/MealService')
+
+function generetePlatforms(platform) {
+
+    const platforms = [
+            {label : "Breakfast" , isSelected : false},
+            {label : "Lunch", isSelected : false},
+            {label : "Dinner", isSelected : false},
+            {label : "Fast Food", isSelected : false},
+            {label : "Gourmet", isSelected : false},
+
+    ]
+    const result = platforms.map(x => x.label === platform ? {...x,isSelected: true} : x)
+
+    return result
+    
+}
+
+
 exports.getCreatePage =  (req,res)=>{
     
     res.render('crud/create')
@@ -71,27 +89,29 @@ exports.getOrder = async(req,res)=>{
 }
 
 exports.getEditPage = async(req,res)=>{
-    // const bookId = req.params.bookId
-    // const bookReview = await BookService.getOne(bookId).lean()
-    res.render('crud/edit')
+    const mealId = req.params.mealId
+    const mealReview = await MealService.getOne(mealId).lean()
+    const platforms = generetePlatforms(mealReview.type)
+
+    res.render('crud/edit',{mealReview,platforms})
 }
 exports.postEditPage = async(req,res)=>{
-const bookId = req.params.bookId
-const {title , author,genre,stars,image,review} = req.body
+    const mealId = req.params.mealId
+const {type,name , image , price,weight ,description} = req.body
 
 try {
-    await BookService.update(bookId ,{title , author,genre,stars,image,review} )
+    await MealService.update(mealId ,{type,name , image , price,weight ,description} )
     
 } catch (error) {
     const errors = Object.keys(error.errors).map(key => error.errors[key].message)
     return res.render(`crud/edit`,{error: errors[0]})
 }
-res.redirect(`/details/${bookId}`)
+res.redirect(`/details/${mealId}`)
 }
 
 exports.getDelete = async(req,res)=>{
-const bookId = req.params.bookId
-await BookService.delete(bookId)
+const mealId = req.params.mealId
+await MealService.delete(mealId)
 
-res.redirect('/catalog')
+res.redirect('/menu')
 }

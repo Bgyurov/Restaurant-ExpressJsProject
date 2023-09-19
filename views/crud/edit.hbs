@@ -16,20 +16,20 @@
                 <form  method="POST">
                     <label>Type:</label>
                     <select id="type" name="type">
-                         {{!-- {{#each platforms}}
+                         {{#each platforms}}
                         <option value="{{label}}"{{#if isSelected}}selected {{/if}} >{{label}}</option>
-                        {{/each}} --}}
+                        {{/each}}
                     </select>
                     <label>Name:</label>
-                    <input type="text" id="name" name="name" value="{{game.name}}">
+                    <input type="text" id="name" name="name" value="{{mealReview.name}}">
                     <label>Image:</label>
-                    <input type="text" id="image" name="image" placeholder="{{game.image}}" value="{{game.image}}">
+                    <input type="text" id="image" name="image" placeholder="{{mealReview.image}}" value="{{mealReview.image}}">
                     <label>Price:</label>
-                    <input type="number" id="price" name="price" value="{{game.price}}">
+                    <input type="number" id="price" name="price" value="{{mealReview.price}}">
                     <label>Weight:</label>
-                    <input type="number" id="weight" name="weight" value="{{game.genre}}">
+                    <input type="number" id="weight" name="weight" value="{{mealReview.weight}}">
                     <label>Description:</label>
-                    <textarea id="description" name="description">{{game.description}}
+                    <textarea id="description" name="description">{{mealReview.description}}
                     </textarea>
                     <input type="submit" id="btn" value="EDIT"></input>
                 </form>
