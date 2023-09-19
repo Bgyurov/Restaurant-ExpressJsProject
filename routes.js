@@ -13,16 +13,16 @@ router.get('/about',homeController.getAboutPage)
 router.get('/gallery',homeController.getGallaryPage)
 
 
-router.get('/createmeal',crudController.getCreatePage)
-router.post('/createmeal',crudController.postCreatePage)
+router.get('/createmeal',isAuthenticated,crudController.getCreatePage)
+router.post('/createmeal',isAuthenticated,crudController.postCreatePage)
 
 router.get('/details/:mealId',crudController.getDetailsPage)
-router.get('/order/:mealId',crudController.getOrder)
+router.get('/order/:mealId',isAuthenticated,crudController.getOrder)
 
-router.get('/edit/:mealId',crudController.getEditPage)
-router.post('/edit/:mealId',crudController.postEditPage)
+router.get('/edit/:mealId',isAuthenticated,crudController.getEditPage)
+router.post('/edit/:mealId',isAuthenticated,crudController.postEditPage)
 
-router.get('/delete/:mealId',crudController.getDelete)
+router.get('/delete/:mealId',isAuthenticated,crudController.getDelete)
 
 router.get('/menu',homeController.getMenuPage)
 router.get('/book',bookController.getBookedPage)
