@@ -11,7 +11,11 @@ router.get('/',homeController.getHomePage)
 router.use('/', authController)
 router.get('/about',homeController.getAboutPage)
 router.get('/gallery',homeController.getGallaryPage)
-router.get('/create',crudController.getCreatePage)
+
+
+router.get('/createmeal',crudController.getCreatePage)
+router.post('/createmeal',crudController.postCreatePage)
+
 router.get('/edit',crudController.getEditPage)
 router.get('/details',crudController.getDetailsPage)
 

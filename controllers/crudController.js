@@ -10,17 +10,17 @@ exports.postCreatePage = async (req,res)=>{
     
         const user = await authService.getUserbyUsername(req.user.username)
         const userId = user._id
-        const {title,author , genre , stars,image ,review} = req.body
+        const {type,name , image , price,weight ,description} = req.body
         try{
-            let book = new ModelName({title,author , genre , stars,image ,review, owner: userId})
-            await book.save()
+            let meal = new Meal({type,name , image , price,weight ,description, owner: userId})
+            await meal.save()
         }catch(error){
             const errors = Object.keys(error.errors).map(key => error.errors[key].message)
 
         return res.render('crud/create',{error: errors[0]})
         }
 
-   res.redirect('/catalog')
+   res.redirect('/menu')
 }
 
 

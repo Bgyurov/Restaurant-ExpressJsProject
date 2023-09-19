@@ -1,4 +1,5 @@
 const Review = require('../models/Review')
+const Meal = require('../models/Meal')
 
 exports.getHomePage = async (req,res)=>{
     let comments = await Review.find().lean()
@@ -13,9 +14,9 @@ exports.getGallaryPage =  (req,res)=>{
     
     res.render('gallary')
 }
-exports.getMenuPage =  (req,res)=>{
-    
-    res.render('menu')
+exports.getMenuPage = async (req,res)=>{
+    let meals = await Meal.find().lean()
+    res.render('menu',{meals})
 }
 exports.getErrorPage =  (req,res)=>{
     

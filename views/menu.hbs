@@ -6,48 +6,17 @@
     
         <section class="menu">
 
-           
-                            <div class="meal">
-                    <div class="meal-img">
-                        <img
-                            src="/images/gallary-6.jpg">
-                    </div>
-                    <div class="meal-info">
-                        <h1>CEzar</h1>
-                        <p><span>Type: </span>{{type}}Salads</p>
-                        <p><span>Weigth: </span>{{Weigth}}</p>
-                        <p class="price"><span >Price: </span>$13</p>
-                    </div>
-                    <a href="/details/{{_id}}" class="btn-details">Details</a>
-                </div> 
-
-                      <div class="meal">
-                    <div class="meal-img">
-                        <img
-                            src="/images/gallary-6.jpg">
-                    </div>
-                    <div class="meal-info">
-                        <h1>CEzar</h1>
-                        <p><span>Type: </span>{{type}}Salads</p>
-                        <p><span>Weigth: </span>{{Weigth}}</p>
-                        <p class="price"><span >Price: </span>$13</p>
-                    </div>
-                    <a href="/details/{{_id}}" class="btn-details">Details</a>
-                </div> 
-
-                  
-              
-            {{!-- {{#if games}}
+            {{#if meals}}
             <div class="offer-list">
-                {{#each games}}
-            {{>game}}
+                {{#each meals}}
+            {{>menucard}}
             {{/each}}
             </div>
             {{else}}
              <div class="no-offer">
                 <p>There are no meals offers today,sorry.</p>
             </div> 
-            {{/if}} --}}
+            {{/if}}
 
         </section>
     </main>
