@@ -35,7 +35,7 @@
   margin-left: 25px;
 }
 
-#profile-info .game-text {
+#profile-info .profile-text {
   float: right;
   margin-top: 10px;
   margin-bottom: 15px;
@@ -62,7 +62,7 @@
 
 #profile-info #description {
   margin-top: 10px;
-  margin-left: 10px;
+  
   font-weight: bold;
 }
 

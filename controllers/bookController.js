@@ -2,8 +2,8 @@ const authService = require('../service/authService')
 const Reservation = require('../models/Reservation')
 
 exports.getBookedPage = (req,res)=>{
-    
-    res.render('book')
+   
+    res.render('book',)
 }
 exports.postBookedPage = async (req,res)=>{
     const user = await authService.getUserbyUsername(req.user.username)

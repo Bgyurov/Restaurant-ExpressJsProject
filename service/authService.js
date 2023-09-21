@@ -1,4 +1,6 @@
 const User = require('../models/User')
+const Reservation = require('../models/Reservation')
+
 const jwt = require('../lib/jsonwebToken')
 const AppError = require('../utils/AppError')
 
@@ -7,6 +9,7 @@ exports.getUserbyEmail = async(email) => {
 
     return user
 }
+
 exports.getUserbyUsername = async(username) => {
     const user = await User.findOne({username})
 
