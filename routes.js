@@ -25,7 +25,9 @@ router.post('/edit/:mealId',isAuthenticated,crudController.postEditPage)
 router.get('/delete/:mealId',isAuthenticated,crudController.getDelete)
 
 router.get('/menu',homeController.getMenuPage)
-router.get('/book',bookController.getBookedPage)
+router.get('/book',isAuthenticated,bookController.getBookedPage)
+router.post('/book',isAuthenticated,bookController.postBookedPage)
+
 
 router.use('*',homeController.getErrorPage)
 
