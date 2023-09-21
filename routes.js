@@ -2,7 +2,7 @@ const router = require('express').Router()
 const homeController = require('./controllers/homeController')
 const authController = require('./controllers/authController')
 const bookController = require('./controllers/bookController')
-
+const profileController = require('./controllers/profileController')
 const crudController = require('./controllers/crudController')
 const {isAuthenticated} = require('./middleware/authMiddleware')
 
@@ -27,6 +27,9 @@ router.get('/delete/:mealId',isAuthenticated,crudController.getDelete)
 router.get('/menu',homeController.getMenuPage)
 router.get('/book',isAuthenticated,bookController.getBookedPage)
 router.post('/book',isAuthenticated,bookController.postBookedPage)
+
+router.get('/profile/:profileId',isAuthenticated,profileController.getProfile)
+
 
 
 router.use('*',homeController.getErrorPage)

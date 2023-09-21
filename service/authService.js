@@ -28,7 +28,7 @@ exports.login = async(email , password)=>{
     if(!isValid){
         throw new AppError('Email or Password is incorrect.')
     }
-    const payload = {username: user.username}
+    const payload = {username: user.username , id: user._id}
     const token = await jwt.sign(payload,'THISISSECRETFORPROJECT', {expiresIn: '2h'})
 
     return token

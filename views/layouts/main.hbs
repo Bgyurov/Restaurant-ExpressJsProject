@@ -22,13 +22,14 @@
                 <li><a href="/contactus">Contact us</a></li>
                 {{#if isAuthenticated}}
                 <li><a href="/createmeal">Add new meal</a></li>
+                <li><a href="/profile/{{id}}">Profile</a></li>
+                <li><a class="book" href="/book">Book table</a></li>
                 <li><a href="/logout">Logout</a></li>
                
                 {{else}}
                 <li><a href="/login">Login</a></li>
                 <li><a href="/register">Register</a></li>
                 {{/if}}
-                <li><a class="book" href="/book">Book table</a></li>
                 {{#if username}}
                 Hello , {{username}}
                 {{/if}}

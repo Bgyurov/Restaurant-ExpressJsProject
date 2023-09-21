@@ -7,8 +7,10 @@ exports.authentication = async (req,res,next)=>{
     if(token){
         try {
          const decodedToken = await jwt.verify(token,'THISISSECRETFORPROJECT')  
+         
          req.user = decodedToken
          req.isAuthenticated = true
+         res.locals.id = decodedToken.id
          res.locals.username = decodedToken.username
         res.locals.isAuthenticated = true
         } catch (error) {
