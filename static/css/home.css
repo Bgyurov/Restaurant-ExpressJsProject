@@ -94,60 +94,7 @@ footer p {
   font-weight: bolder;
   text-align: center;
 } 
-/* Reviews */
 
-.reviews {
-  text-align: center;
-  padding: 20px;
-  padding-top: 50px;
-
-  background-color: #00000036;
-}
-
-/* Style the review cards */
-.review {
-  display: inline-block;
-  width: 300px;
-  margin: 20px;
-  padding: 15px;
-
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Style user images */
-.review img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-/* Style review headings */
-.review h3 {
-  font-size: 18px;
-  margin: 0;
-}
-
-/* Style review quotes */
-.review p {
-  font-style: italic;
-  margin: 10px 0;
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 8px;
-    background-color: #e7e7e7;
-    border: 1px solid #cacaca;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background-color: #050912;
-}
 
 .errorContainer {
   position: fixed;
@@ -182,7 +129,7 @@ footer p {
   animation: cssAnimation 0s ease-in 2s forwards;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-}
+} 
 
 @keyframes cssAnimation {
   to {
@@ -201,3 +148,95 @@ footer p {
     padding: 0;
   }
 }
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f13a;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+  background: #f1f1f13a;
+}
+
+.mySlides img{
+  margin-bottom:auto;
+  width: 4%;
+  height: 4%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #D81E5B;
+  font-weight: bold;
+  font-size: 24px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: #D81E5B;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #f1f1f13a;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color:#D81E5B;}
+.rating {
+  color: #1E2D2F;
+  font-weight: bold;
+  padding-top: 1%;
+}
+
+
+.centered-text {
+  text-align: center;
+  background: #1E2D2F;
+  font-size: 20px;
+
+}
+

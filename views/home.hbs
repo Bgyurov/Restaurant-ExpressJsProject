@@ -9,20 +9,71 @@
             <a href="/gallery" class="buy">View our gallery</a>
 
         <br></br>
-    <div class="reviews">
-        <h2>Customer Reviews</h2>
+  
+
+    <div class="slideshow-container">
+        <h2 class="centered-text">Comments</h2>
+        <h3 class="centered-text">Clients says</h3>
         {{#if comments}}
         {{#each comments}}
         {{>review}}
         {{/each}}
         {{else}}
-        <div class="no-offer">
+ <div class="no-offer">
                 <p>No reviews available at the moment.</p>
             </div> 
-        {{/if}}
-    </div>
+            {{/if}}
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
             </div>
           
     </main>
+
+    <script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function autoAdvance() {
+            plusSlides(1); // Go to the next slide
+            setTimeout(autoAdvance, 6000); // Call autoAdvance again after 7 seconds (7000 milliseconds)
+        }
+
+        // Start the automatic slide advancement
+        setTimeout(autoAdvance, 6000);
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
 
  
