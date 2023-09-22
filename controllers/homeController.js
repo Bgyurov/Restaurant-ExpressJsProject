@@ -3,7 +3,7 @@ const Meal = require('../models/Meal')
 
 exports.getHomePage = async (req,res)=>{
     let comments = await Review.find().lean()
-    comments = comments.slice(0,3)
+   
     res.render('home',{comments})
 }
 exports.getAboutPage =  (req,res)=>{
