@@ -12,6 +12,7 @@ exports.authentication = async (req,res,next)=>{
          req.isAuthenticated = true
          res.locals.id = decodedToken.id
          res.locals.username = decodedToken.username
+         res.locals.isAdmin = decodedToken.isAdmin
         res.locals.isAuthenticated = true
         } catch (error) {
             console.log(error.message)
@@ -26,6 +27,13 @@ exports.authentication = async (req,res,next)=>{
 exports.isAuthenticated = (req,res,next) =>{
     if(!req.isAuthenticated){
         return res.redirect('/login')
+    }
+    next()
+}
+
+exports.isAdmin = (req,res,next) => {
+    if(!req.user.isAdmin){
+        return res.redirect('/noaccess')
     }
     next()
 }

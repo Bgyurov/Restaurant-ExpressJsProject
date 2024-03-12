@@ -2,23 +2,24 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
 const userSchema = new mongoose.Schema({
-    //OPTIONAL....
     username: {
         type: String,
         required: true,
         minLength: [5,'Username is too short']
     },
-    //OPTIONAL....
     email: {
         type: String,
         required: true,
         minLength: [10,'Email is too short']
     },
-    //OPTIONAL....
     password: {
         type: String,
         required: true,
         minLength: [4,'Password is too short']
+    },
+    isAdmin: {
+        type:Boolean,
+        default: false,
     }
 })
 

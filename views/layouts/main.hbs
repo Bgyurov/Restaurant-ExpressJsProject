@@ -21,7 +21,10 @@
                 <li><a href="/menu">Menu</a></li>
                 <li><a href="/contactus">Contact us</a></li>
                 {{#if isAuthenticated}}
+                {{#if isAdmin }}
                 <li><a href="/createmeal">Add new meal</a></li>
+                {{/if}}
+
                 <li><a href="/profile/{{id}}">Profile</a></li>
                 <li><a class="book" href="/book">Book table</a></li>
                 <li><a href="/logout">Logout</a></li>

@@ -23,4 +23,7 @@ exports.getErrorPage =  (req,res)=>{
     
     res.render('404')
 }
+exports.getAccessPage = (req,res)=>{
+    res.render('noaccess')
+}
 
