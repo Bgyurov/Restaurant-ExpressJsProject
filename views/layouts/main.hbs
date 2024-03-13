@@ -2,62 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodHut - Gourmet Restaurant</title>
-    <link rel="stylesheet" href="/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/output.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <title>Document</title>
 </head>
+<header class="bg-[#374151] py-4">
+  <nav class="container mx-auto flex justify-between items-center">
+     <a href="/" class="mr-4">
+                <img src="/images/logo.svg" alt="Logo" class="h-8 w-8 rounded-full">
+            </a>
+    {{#if isAuthenticated}}
+    <ul class="flex space-x-4">
+      <li><a href="/about" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">About</a></li>
+      <li><a href="/gallery" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">Gallery</a></li>
+      <li><a href="/menu" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">Menu</a></li>
+      <li><a href="/contactus" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">Contact us</a></li>
+      {{#if isAdmin }}
+      <li><a href="/createmeal" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">Add new meal</a></li>
+      {{/if}}
 
-<body>
-    <header class="header">
-        <nav>
-            <img src="/images/logo.svg" class="logo">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/gallery">Gallery</a></li>
+    </ul>
+    <ul class="flex space-x-4">
 
-                <li><a href="/menu">Menu</a></li>
-                <li><a href="/contactus">Contact us</a></li>
-                {{#if isAuthenticated}}
-                {{#if isAdmin }}
-                <li><a href="/createmeal">Add new meal</a></li>
-                {{/if}}
+      <li><a href="/profile/{{id}}">
+          <!-- Replace 'avatar.jpg' with the path to the user's avatar image -->
+          <img src="/images/profileImg.png" alt="Avatar" class="h-8 rounded-full">
+        </a></li>
+      <li><a href="/book" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#6366f1] text-md">Book table</a></li>
+      <li><a href="/logout" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
+          </svg>
+        </a></li>
+    </ul>
+    {{else}}
+    <ul class="flex space-x-4">
+      <li><a href="/about" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">About</a></li>
+      <li><a href="/gallery" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">Gallery</a></li>
+      <li><a href="/menu" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">Menu</a></li>
+      <li><a href="/contactus" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">Contact us</a></li>
+      <li class="ml-auto"><a href="/login" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">Login</a></li>
+      <li><a href="/register" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">Register</a></li>
+    </ul>
+    {{/if}}
+  </nav>
+</header>
 
-                <li><a href="/profile/{{id}}">Profile</a></li>
-                <li><a class="book" href="/book">Book table</a></li>
-                <li><a href="/logout">Logout</a></li>
-               
-                {{else}}
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-                {{/if}}
-                {{#if username}}
-                Hello , {{username}}
-                {{/if}}
-                
-            </ul>
-        </nav>
-    </header>
+
+
 {{{body}}}
 
-   <footer>
-        <p>© Copyright 2023 Made By Boyan Gyurov</p>
-    </footer>
-
-</body>
+<script src="/tw-elements/dist/js/tw-elements.umd.min.js" type="text/javascript"></script>
 
 </html>
-      <script>
-        // JavaScript to hide the loading screen and show the iframe when it's fully loaded
-        const iframe = document.getElementById('my-iframe');
-        const loadingScreen = document.getElementById('loading-screen');
-
-        iframe.addEventListener('load', () => {
-            // When the iframe is fully loaded, hide the loading screen
-            loadingScreen.style.display = 'none';
-            // Show the iframe
-            iframe.style.display = 'block';
-        });
-    </script>
