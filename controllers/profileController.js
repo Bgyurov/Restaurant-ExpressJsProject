@@ -6,7 +6,6 @@ exports.getProfile = async(req,res)=>{
     let userUsername = user.username
     let owner = req.params.profileId
     const books = await Reservation.find({owner}).lean()
-    console.log(books)
     
     res.render('profile',{userUsername,userEmail,books})
 }

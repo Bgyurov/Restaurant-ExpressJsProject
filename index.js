@@ -11,6 +11,7 @@ setupViewEngine(app)
 
 app.use(cookieParser())
 app.use(express.static('static'))
+app.use(express.static("node_modules"));
 app.use(express.urlencoded({extended: false}))
 app.use(authMiddleware.authentication)
 app.use(router)

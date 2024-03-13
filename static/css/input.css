@@ -18,3 +18,8 @@
 p {
   @apply leading-[1.6];
 }
+
+.bg-custom-image {
+  background-image: url(../images/main.jpg);
+}
+
