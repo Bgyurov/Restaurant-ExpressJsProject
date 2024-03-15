@@ -19,7 +19,25 @@ p {
   @apply leading-[1.6];
 }
 
-.bg-custom-image {
+.home-custom-image {
   background-image: url(../images/main.jpg);
 }
+.details-custom-image {
+  background-image: url(../images/details.jpg);
+}
+ /* Custom scrollbar styles */
+ ::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 

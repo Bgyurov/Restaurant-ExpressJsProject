@@ -1360,8 +1360,31 @@ p{
   line-height: 1.6;
 }
 
-.bg-custom-image {
+.home-custom-image {
   background-image: url(../images/main.jpg);
+}
+
+.details-custom-image {
+  background-image: url(../images/details.jpg);
+}
+
+/* Custom scrollbar styles */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .empty\:hidden:empty{
@@ -1509,4 +1532,5 @@ p{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+
 
