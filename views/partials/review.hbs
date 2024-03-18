@@ -1,9 +1,15 @@
-
-<div class="mySlides">
- <img src="/images/profileImg.png" alt="ProfilePicture">
-
-  <p class="author">{{name}}</p>
-  <p>{{comment}}</p>
-  <p class="rating">{{rating}} </p>
-
+<div class="max-w-lg mx-auto">
+    <div class="mySlides">
+        <div class="bg-gray-200 p-4 rounded-lg shadow-md">
+          {{#if userProfileImage}}
+            <img src={{userProfileImage}} alt="Profile Picture" class="w-24 h-24 mx-auto mb-4 rounded-full">
+            {{else}}
+            <img src="/images/profileImg.png" alt="Profile Picture" class="w-24 h-24 mx-auto mb-4 rounded-full">
+            
+            {{/if}}
+            <p class="text-center text-lg font-bold mb-2">{{name}}</p>
+            <p class="text-center mb-2">{{comment}}</p>
+            <p class="text-center">{{rating}}</p>
+        </div>
+    </div>
 </div>

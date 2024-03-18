@@ -4,11 +4,11 @@
 
   
         {{#if error}}
-         <div>
-            <div class="errorContainer">
-                <p>{{error}}</p>
-            </div>
-        </div> 
+<div class="max-w-lg mx-auto">
+        <div class="error-container bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+            <p>{{error}}</p>
+        </div>
+    </div>
         {{/if}}
 
       
@@ -36,7 +36,7 @@
   <form class="bg-gray-200 rounded-lg shadow-md p-5" method="POST">
     <div class="mb-4">
       <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Name..." required class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500">
+      <input type="text" id="name" name="name"  placeholder={{username}}  class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500">
     </div>
     <div class="mb-4">
       <label for="rating" class="block text-gray-700 text-sm font-bold mb-2">Rating:</label>

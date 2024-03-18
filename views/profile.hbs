@@ -1,7 +1,11 @@
   <main id="profile">
         <section id="profile-info">
             <div class="profile-image">
-                <img src={{profileImage}}>
+                {{#if userProfileImage}}
+                <img src={{userProfileImage}}>
+                {{else}}
+                <img src="/images/profileImg.png">
+                {{/if}}
             </div>
 
             <div class="profile-info">
