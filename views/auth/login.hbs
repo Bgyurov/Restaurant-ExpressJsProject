@@ -1,25 +1,38 @@
 
 
-    <main id="login">
-        <!-- In case of error, you should display div with class "errorContainer" -->
-        <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+    <body class="contact-custom-image bg-cover bg-center overflow-y-auto min-h-screen" id="login">
+    
 
-        <!-- <div>
-            <div class="errorContainer">
-                <p>Error</p>
-            </div>
-        </div> -->
-
-        <div class="login-box">
-            <h1>Login</h1>
-            <form action="#" method="POST">
-                <label>Email</label>
-                <input type="text" name="email" placeholder="Email..">
-                <label>Password</label>
-                <input type="password" name="password" placeholder="Password..">
-                <input type="submit" value="Login">
-            </form>
-            <p>Don't have an account? <a href="/register">Register here</a></p>
+        {{#if error}}
+<div class="max-w-lg mx-auto">
+        <div class="error-container bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+            <p>{{error}}</p>
         </div>
+    </div>
+        {{/if}} 
+          <div class="max-w-lg mx-auto">
+  <div class="login bg-gray-200 rounded-lg p-8 mt-5">
+    <div class="bg-gray-300 text-center border-double border-4 border-sky-500  rounded-lg z-10">
+    <h1 class="text-2xl text-white font-bold mb-4">Login</h1>
+    <h4 class="text-sm text-white mb-6">Enter your credentials to access your account.</h4>
+
+    </div>
+    <form method="POST" class=" space-y-4">
+            <form class="space-y-4" method="POST">
+                <div>
+
+                <label class="block text-sm text-center mt-5  text-gray-700 font-bold font-medium text-gray-700" >Email</label>
+                <input class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" type="text" name="email" placeholder="Email..">
+                </div>
+                <div>
+                <label class="block text-sm text-center  text-gray-700 font-bold font-medium text-gray-700">Password</label>
+                <input class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" type="password" name="password" placeholder="Password..">
+                </div>
+      <div class="flex justify-center">
+
+                <input class="bg-[#374151] text-[#fef3c7] justify-center  font-bold py-2 px-4 rounded shadow-white transition-all duration-100 delay-100 hover:text-[#ddd6fe] hover:shadow-lg" type="submit" value="Login">
+      </div>
+            </form>
+            <p class="mt-4 text-center text-sm">Don't have an account? <a class="text-gray-700 font-bold  transition-all duration-100 delay-100 hover:text-gray-600" href="/register">Register here</a></p>
     </main>
 
