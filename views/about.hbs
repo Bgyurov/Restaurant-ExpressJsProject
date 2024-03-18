@@ -15,6 +15,19 @@
             Visit us at Las Ramblas,Barcelona No56 or make a reservation by clicking <a class="text-[#fef3c7] transition-all font-bold duration-100 delay-100 hover:text-[#ddd6fe]" href="/book">Here</a>.
         </p>
 
+        <h2 class="text-2xl text-center text-white font-bold">Comments</h2>
+        <h3 class="text-xl text-center mb-5 text-white">Clients says</h3>
+        {{#if comments}}
+        {{#each comments}}
+        {{>review}}
+        {{/each}}
+       <a class="text-white mr-5 cursor-pointer" onclick="plusSlides(-1)">❮</a>
+        <a class="text-white cursor-pointer" onclick="plusSlides(1)">❯</a>
+        {{else}}
+ <div class="text-center text-white">
+                <p>No reviews available at the moment.</p>
+            </div> 
+            {{/if}}
 
         <div class="w-full h-64 px-10 rounded-lg shadow-md overflow-hidden mt-10">
     <div class="aspect-w-16 aspect-h-9">
@@ -23,44 +36,27 @@
 </div>
 </div>
 </div>  
-    <div class="slideshow-container">
-<div class="dot-container">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
-        <h2 class="text-2xl text-center text-white font-bold">Comments</h2>
-        <h3 class="text-xl text-center text-white">Clients says</h3>
-        {{#if comments}}
-        {{#each comments}}
-        {{>review}}
-       <a class="prev absolute top-1/2 left-0 transform -translate-y-1/2 cursor-pointer" onclick="plusSlides(-1)">❮</a>
-        <a class="next absolute top-1/2 right-0 transform -translate-y-1/2 cursor-pointer" onclick="plusSlides(1)">❯</a>
-        {{/each}}
-        {{else}}
- <div class="text-center text-white">
-                <p>No reviews available at the moment.</p>
-            </div> 
-            {{/if}}
 
-</div>
+
+
 
 
     </body>
    <script>
   var slideIndex = 1;
 showSlides(slideIndex);
+autoAdvance()
 function plusSlides(n) {
   showSlides(slideIndex += n);
+  autoAdvance()
 }
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 function autoAdvance() {
-            plusSlides(1); // Go to the next slide
-            setTimeout(autoAdvance, 6000); // Call autoAdvance again after 7 seconds (7000 milliseconds)
+            plusSlides(1); 
+            setTimeout(autoAdvance, 6000); 
         }
-        // Start the automatic slide advancement
         setTimeout(autoAdvance, 6000);
 function showSlides(n) {
   let i;
