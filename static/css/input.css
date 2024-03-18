@@ -25,6 +25,12 @@ p {
 .details-custom-image {
   background-image: url(../images/details.jpg);
 }
+.contact-custom-image {
+  background-image: url(../images/book-table-img.jpg);
+}
+.register-custom-image {
+  background-image: url(../images/register.jpg);
+}
  /* Custom scrollbar styles */
  ::-webkit-scrollbar {
   width: 8px;

@@ -773,6 +773,10 @@ html.dark{
   margin-bottom: 0px;
 }
 
+.ml-10{
+  margin-left: 2.5rem;
+}
+
 .ml-auto{
   margin-left: auto;
 }
@@ -954,6 +958,12 @@ html.dark{
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-5 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .overflow-hidden{
@@ -1366,6 +1376,14 @@ p{
 
 .details-custom-image {
   background-image: url(../images/details.jpg);
+}
+
+.contact-custom-image {
+  background-image: url(../images/book-table-img.jpg);
+}
+
+.register-custom-image {
+  background-image: url(../images/register.jpg);
 }
 
 /* Custom scrollbar styles */
