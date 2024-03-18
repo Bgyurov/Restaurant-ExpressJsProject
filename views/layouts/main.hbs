@@ -15,7 +15,7 @@
                 <img src="/images/logo.svg" alt="Logo" class="h-8 w-8 rounded-full">
             </a>
     {{#if isAuthenticated}}
-    <ul class="flex space-x-4">
+    <ul class="flex ml-10 space-x-5">
       <li><a href="/about" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">About</a></li>
       <li><a href="/menu" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">Menu</a></li>
       <li><a href="/contactus" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]">Contact us</a></li>
@@ -25,10 +25,15 @@
 
     </ul>
     <ul class="flex space-x-4">
-
       <li><a href="/profile/{{id}}">
-          <!-- Replace 'avatar.jpg' with the path to the user's avatar image -->
+      {{#if profileImage}}
+          <img src="{{profileImage}}" alt="Avatar" class="h-8 rounded-full">
+
+      {{else}}
           <img src="/images/profileImg.png" alt="Avatar" class="h-8 rounded-full">
+
+
+      {{/if}}
         </a></li>
       <li><a href="/book" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#6366f1] text-md">Book table</a></li>
       <li><a href="/logout" class="text-[#fef3c7] transition-colors duration-100 delay-100 hover:text-[#ddd6fe]"><svg xmlns="http://www.w3.org/2000/svg" fill="none"

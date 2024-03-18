@@ -17,6 +17,9 @@ const userSchema = new mongoose.Schema({
         required: true,
         minLength: [4,'Password is too short']
     },
+    profileImage: {
+        type:String
+    },
     isAdmin: {
         type:Boolean,
         default: false,

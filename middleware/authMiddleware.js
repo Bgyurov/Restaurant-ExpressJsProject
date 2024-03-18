@@ -7,11 +7,12 @@ exports.authentication = async (req,res,next)=>{
     if(token){
         try {
          const decodedToken = await jwt.verify(token,'THISISSECRETFORPROJECT')  
-         
+         console.log(decodedToken)
          req.user = decodedToken
          req.isAuthenticated = true
          res.locals.id = decodedToken.id
          res.locals.username = decodedToken.username
+         res.locals.profileImage = decodedToken.profileImage
          res.locals.isAdmin = decodedToken.isAdmin
         res.locals.isAuthenticated = true
         } catch (error) {

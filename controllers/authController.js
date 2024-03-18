@@ -48,31 +48,22 @@ router.get('/register', (req,res)=>{
 })
 
 router.post('/register', async (req, res,next)=>{
-    const {username,email , password , repeatPassword} = req.body
+    const {username,email ,profileImage, password , repeatPassword} = req.body
+    console.log(req.body)
 
     if(password !== repeatPassword){
-        //throw new errror
         
         return res.render('auth/register',{error: 'Password Missmatch'})
     }
-//verification for email
     const existingEmail = await authService.getUserbyEmail(email)
-    // console.log(`Existing user - ${existingUser.username}` + ' '+ 'Email from form ' + email)
    if(existingEmail){
     console.log('email exist')
     return res.render('auth/register',{error: 'Email already exist'})
    }
 
-   //verification for name 
-//    const existingUser = await authService.getUserbyUsername(username)
-
-//    if(existingUser){
-//     console.log('username exist')
-//     return res.render('auth/register')
-//    }
 
     try {
-        const user = await authService.register(username , email , password)
+        const user = await authService.register(username , profileImage, email , password)
         const token = await authService.login(email,password)
         res.cookie('mycookie', token, {httpOnly: true})
     } catch (error) {

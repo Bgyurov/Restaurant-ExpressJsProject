@@ -16,8 +16,8 @@ exports.getUserbyUsername = async(username) => {
     return user
 }
 
-exports.register = (username,email,password)=>{
-    return User.create({username,email,password})
+exports.register = (username,profileImage ,  email,password)=>{
+    return User.create({username ,profileImage,email,password})
 }
 exports.login = async(email , password)=>{
 
@@ -29,7 +29,7 @@ exports.login = async(email , password)=>{
     if(!isValid){
         throw new AppError('Email or Password is incorrect.')
     }
-    const payload = {username: user.username , id: user._id , isAdmin: user.isAdmin}
+    const payload = {username: user.username , id: user._id , profileImage: user.profileImage, isAdmin: user.isAdmin}
     const token = await jwt.sign(payload,'THISISSECRETFORPROJECT', {expiresIn: '2h'})
 
     return token
