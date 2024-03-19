@@ -1,44 +1,31 @@
-  <main id="profile">
-        <section id="profile-info">
-            <div class="profile-image">
-                {{#if userProfileImage}}
-                <img src={{userProfileImage}}>
-                {{else}}
-                <img src="/images/profileImg.png">
-                {{/if}}
-            </div>
+  <body class="home-custom-image bg-cover bg-center overflow-y-auto min-h-screen" id="profile">
+          <div class="flex justify-center mt-5 items-center mb-8">
+    {{#if profileImage}}
+    <img src={{profileImage}} class="w-32 h-32 rounded-full">
+    {{else}}
+    <img src="/images/profileImg.png" class="w-32 h-32 rounded-full">
+    {{/if}}
+</div>
 
-            <div class="profile-info">
-                <div class="profile-text">
-                    <h3 id="platform">Your profile</h3>
-                    <p id="price"><span>Username: {{userUsername}}</span></p>
-                    <p id="genre"><span>Email: {{userEmail}}</span></p>
+<div class="flex justify-center">
+    <div class="bg-gray-100 rounded-lg shadow-lg p-8">
+        <h3 class="text-2xl font-bold mb-4">Your profile</h3>
+        <p class="mb-2"><span class="font-semibold">Username:</span> {{userUsername}}</p>
+        <p class="mb-4"><span class="font-semibold">Email:</span> {{userEmail}}</p>
 
-                    <p id="genre">Your orders:</p>
-                <br>
-                    {{#if books}}
-                    <ul>
+        <p class="font-semibold mb-2">Your orders:</p>
+        <ul>
+            {{#if reservations}}
+            {{#each reservations}}
+            <li class="border-b border-gray-200 py-2">
+                {{> order}}
+            </li>
+            {{/each}}
+            {{else}}
+            <li class="text-gray-500">No orders found</li>
+            {{/if}}
+        </ul>
+    </div>
+</div>
 
-                    {{#each books}}
-                    {{>order}}
-
-                    {{/each}}
-                    </ul>
-                    {{/if}}
-                   
-
-                </div>
-                    
-                <div class="product-btn">
-                   {{!-- <div class="author">
-                        <a href="/edit/{{._id}}" class="btn-edit">Edit</a>
-                        <a href="/delete/{{mealReview._id}}" class="btn-delete">Delete</a>
-                    </div> --}}
-
-                    <!-- Logged in user who has already buy this game code-->
-                 
-                </div>
-           
-            </div>
-        </section>
-    </main>
+    </body>
