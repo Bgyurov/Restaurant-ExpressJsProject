@@ -1,31 +1,45 @@
+  
+  
   <body class="home-custom-image bg-cover bg-center overflow-y-auto min-h-screen" id="profile">
-          <div class="flex justify-center mt-5 items-center mb-8">
-    {{#if profileImage}}
-    <img src={{profileImage}} class="w-32 h-32 rounded-full">
-    {{else}}
-    <img src="/images/profileImg.png" class="w-32 h-32 rounded-full">
-    {{/if}}
-</div>
+  <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8 mt-8">
 
-<div class="flex justify-center">
-    <div class="bg-gray-100 rounded-lg shadow-lg p-8">
-        <h3 class="text-2xl font-bold mb-4">Your profile</h3>
-        <p class="mb-2"><span class="font-semibold">Username:</span> {{userUsername}}</p>
-        <p class="mb-4"><span class="font-semibold">Email:</span> {{userEmail}}</p>
-
-        <p class="font-semibold mb-2">Your orders:</p>
-        <ul>
-            {{#if reservations}}
-            {{#each reservations}}
-            <li class="border-b border-gray-200 py-2">
-                {{> order}}
-            </li>
-            {{/each}}
+    <!-- Profile Information -->
+    <div class="flex items-center mb-6">
+        <!-- Profile Image -->
+        <div class="rounded-full overflow-hidden mr-6">
+            {{#if profileImage}}
+            <img src="{{profileImage}}" alt="Profile Image" class="w-20 h-20">
             {{else}}
-            <li class="text-gray-500">No orders found</li>
+            <div class="bg-gray-200 w-20 h-20 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6a3 3 0 100-6 3 3 0 000 6z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.37 6.63a9 9 0 11-12.74 0M12 14v5m0 0a3 3 0 103-3 3 3 0 00-3 3v1"></path>
+                </svg>
+            </div>
             {{/if}}
-        </ul>
+        </div>
+        <!-- Profile Info -->
+        <div>
+            <h2 class="text-xl font-bold mb-1">{{ userUsername }}</h2>
+            <p class="text-gray-600">{{ userEmail }}</p>
+        </div>
     </div>
+
+    <div>
+        <h3 class="text-lg font-semibold mb-4">Reservations</h3>
+        {{#if reservations}}
+<div id="reservationsContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    {{#each reservations}}
+        {{> order}}
+    {{/each}}
 </div>
+{{else}}
+
+<h1>No reservations yet.</h1>
+{{/if}}
+
+</div>
+
+
 
     </body>

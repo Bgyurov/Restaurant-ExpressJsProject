@@ -1,33 +1,49 @@
-<main id="book">
-    <section class="game-search">
-        <div class="book-box">
-            <h1>Book table</h1>
+<body class="contact-custom-image bg-cover bg-center overflow-y-auto min-h-screen" id="book">
+          <div class="max-w-lg mx-auto">
 
-            <form method="POST">
-                 <div class="form-group">
-            Your Name:
-            <input type="text" id="name" name="name" required>
-        </div>
-               <div class="form-group">
-           Number of guests:
-            <input type="number" id="guests" name="guests" min="1" required>
-        </div>
-       
-        <div class="form-group">
-            Phone Number:
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-        <div class="form-group">
-            Reservation Date:
-            <input type="date" id="date" name="date"  required>
-        </div>
-        <div class="form-group">
-            Reservation Time:
-            <input type="time" id="time" name="time" required>
-        </div>
-        <input type="submit" value="Submit Reservation"></input>
-            </form>
+       <div class="book bg-gray-200 rounded-lg p-8 mt-5">
+    <div class="bg-gray-300 text-center border-double border-4 border-sky-500  rounded-lg z-10">
+    <h1 class="text-2xl text-white font-bold mb-4">Book table</h1>
+
+    </div>
+    <form method="POST" class=" space-y-4">
+        <div >
+            <label for="name" class="block text-sm text-center mt-5  text-gray-700 font-bold font-medium text-gray-700">Your Name:</label>
+            <input type="text" id="name" name="name" required class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500">
         </div>
 
-    </section>
-</main>
+        <div >
+            <label for="guests" class="block text-sm text-center mt-5  text-gray-700 font-bold font-medium text-gray-700">Number of guests:</label>
+            <input type="number" id="guests" name="guests" min="1" required class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500">
+        </div>
+
+        <div >
+            <label for="phone" class="block text-sm text-center mt-5  text-gray-700 font-bold font-medium text-gray-700">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500">
+        </div>
+
+        <div >
+            <label for="date" class="block text-sm text-center mt-5  text-gray-700 font-bold font-medium text-gray-700">Reservation Date:</label>
+            <input type="date" id="date" name="date" required class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"  min="{{todayDate}}">
+        </div>
+
+        <div >
+            <label for="time" class="block text-sm text-center mt-5  text-gray-700 font-bold font-medium text-gray-700">Reservation Time:</label>
+<input type="time" id="time" name="time" required class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"  min="10:00" max="23:59" >
+        </div>
+      <div class="flex justify-center">
+
+        <input type="submit" value="Submit Reservation" class="bg-[#374151] text-[#fef3c7] justify-center  font-bold py-2 px-4 rounded shadow-white transition-all duration-100 delay-100 hover:text-[#ddd6fe] hover:shadow-lg">
+      </div>
+    </form>
+</div>
+
+
+</body>
+<script>
+    const today = new Date().toISOString().split('T')[0];
+
+document.getElementById('date').setAttribute('min', today);
+
+
+</script>

@@ -1,11 +1,9 @@
- <li>
- <article id="description">
-          
-            <p>Reservation name: {{name}}</p>
-            <p>Guests: {{guests}}</p>
-            <p>Date: {{date}}</p>
-            <p>Time: {{time}}</p>
-
-        </article>
-
- </li>
+<div class="bg-gray-100 rounded-lg p-4 mb-4">
+    <!-- Reservation Details -->
+    <div class="border-b border-gray-200 mb-2 pb-2">
+        <p class="font-bold">Date: {{ date }}</p>
+        <p>Time: {{ time }}</p>
+    </div>
+    <p><span class="font-bold">Reservation name:</span> {{ name }}</p>
+    <p><span class="font-bold">Guests:</span> {{ guests }}</p>
+</div>
