@@ -10,11 +10,9 @@ exports.getHomePage = async (req,res)=>{
 exports.getAboutPage = async (req,res)=>{
     let comments = await Review.find().lean()
     for (let comment of comments) {
-        // Find the user who made the review
         let user = await User.findById(comment.owner).lean();
         if (user) {
-            // Add user profile image to the comment object
-            comment.userProfileImage = user.profileImage; // Assuming profileImage is the field containing profile picture
+            comment.userProfileImage = user.profileImage; 
         }
     }
 

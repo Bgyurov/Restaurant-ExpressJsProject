@@ -40,9 +40,10 @@
 
             {{#if isAuthenticated}}
         <div class="text-center mt-2">
-            <h1 class="text-3xl text-white font-bold">Leave a Review</h1>
+            <h1 class="text-3xl mb-5 text-white font-bold">Leave a Review</h1>
 
             <div class="max-w-sm mx-auto">
+              {{#unless  noaccess}}
   <form class="bg-gray-200 rounded-lg shadow-md p-5" method="POST">
     <div class="mb-4">
       <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
@@ -67,6 +68,12 @@
     </div>
   </form>
   <p class="text-center text-white mt-4">Your reviews are very important to us, we appreciate it.</p>
+  {{else}}
+        <div class=" bg-gray-200 rounded-lg  shadow-md flex items-center flex-col justify-center p-5">
+
+  <p class="mb-2 text-gray-700 text-sm font-bold">Thank your for review.</p>
+  </div>
+{{/unless }}
 </div>
 
         {{/if}}
