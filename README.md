@@ -19,7 +19,7 @@ To get a local copy up and running follow these simple steps:
 
 ![Preview](https://github.com/Bgyurov/Restaurant-ExpressJsProject/blob/main/static/images/foothut3.png)
 
-##Features
+## Features
 - Authentication: Users can sign up, log in, and log out.
 - Authorization: Admin users have additional permissions to create, edit, and delete meals.
 - Menu Display: Users can view the available menu items.
@@ -30,7 +30,7 @@ To get a local copy up and running follow these simple steps:
 - Error Handling: Proper error handling and error pages.
 
   ![Preview](https://github.com/Bgyurov/Restaurant-ExpressJsProject/blob/main/static/images/foothut4.png)
-##Routes
+## Routes
 /: Home page
 /about: About page
 /gallery: Gallery page
