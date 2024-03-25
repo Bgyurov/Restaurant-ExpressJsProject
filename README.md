@@ -6,7 +6,7 @@
 This is a food app built with Node.js and Express.js. It allows users to view a menu, order meals, create/edit/delete meals (admin only), book orders, and view profiles.
 
 
-![Preview](https://github.com/Bgyurov/Restaurant-ExpressJsProject/static/images/foodhut2.png)
+![Preview](https://github.com/Bgyurov/Restaurant-ExpressJsProject/blob/main/static/images/foothut2.png)
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ To get a local copy up and running follow these simple steps:
 3. npm run dev
 
 
-![Preview](https://github.com/Bgyurov/Restaurant-ExpressJsProject/static/images/foodhut3.png)
+![Preview](https://github.com/Bgyurov/Restaurant-ExpressJsProject/blob/main/static/images/foothut3.png)
 
 ##Features
 - Authentication: Users can sign up, log in, and log out.
@@ -29,7 +29,7 @@ To get a local copy up and running follow these simple steps:
 - Profile Viewing: Users can view their profiles.
 - Error Handling: Proper error handling and error pages.
 
-  ![Preview](https://github.com/Bgyurov/Restaurant-ExpressJsProject/static/images/foodhut4.png)
+  ![Preview](https://github.com/Bgyurov/Restaurant-ExpressJsProject/blob/main/static/images/foothut4.png)
 ##Routes
 /: Home page
 /about: About page
