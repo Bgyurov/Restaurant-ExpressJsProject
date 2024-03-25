@@ -31,15 +31,15 @@ To get a local copy up and running follow these simple steps:
 
   ![Preview](https://github.com/Bgyurov/Restaurant-ExpressJsProject/blob/main/static/images/foothut4.png)
 ## Routes
-/: Home page
-/about: About page
-/gallery: Gallery page
-/menu: Menu page
-/createmeal: Create meal page (accessible to admin users only)
-/details/:mealId: Details page for a specific meal
-/order/:mealId: Order page for a specific meal
-/edit/:mealId: Edit page for a specific meal (accessible to admin users only)
-/delete/:mealId: Delete functionality for a specific meal (accessible to admin users only)
-/book: Booked orders page
-/profile/:profileId: Profile page for a specific user
-/noaccess: Access denied page
+- /: Home page
+- /about: About page
+- /gallery: Gallery page
+- /menu: Menu page
+- /createmeal: Create meal page (accessible to admin users only)
+- /details/:mealId: Details page for a specific meal
+- /order/:mealId: Order page for a specific meal
+- /edit/:mealId: Edit page for a specific meal (accessible to admin users only)
+- /delete/:mealId: Delete functionality for a specific meal (accessible to admin users only)
+- /book: Booked orders page
+- /profile/:profileId: Profile page for a specific user
+- /noaccess: Access denied page
