@@ -3,13 +3,16 @@ const authService = require('../service/authService')
 const Review = require('../models/Review')
 
 router.get('/contactus', async (req,res)=>{
-    let ownerId = req.user.id
-    let reservations = await Review.find({owner: ownerId}).lean()
-    console.log(reservations)
     let noaccess = false
-    if(reservations.length > 0){
-        
-        noaccess = true
+    if(req.user.id !== undefined){
+        let ownerId = req.user.id
+        let reservations = await Review.find({owner: ownerId}).lean()
+        console.log(reservations)
+        if(reservations.length > 0){
+            
+            noaccess = true
+        }
+
     }
     console.log(noaccess)
     res.render('auth/contact' , {noaccess})
